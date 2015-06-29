@@ -83,7 +83,7 @@ public class Diretor implements Serializable {
 
     @Override
     public String toString() {
-        return "br.ufac.entidades.Diretor[ id=" + id + " ]";
+        return "br.ufac.entidades.Diretor[ id=" + id + ", nome=" + nome + ", sobrenome=" + sobrenome + " ]";
     }
     
 }
