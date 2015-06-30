@@ -20,7 +20,7 @@ public class AtorEJB extends DAO<Ator>{
 
     @Override
     public void persist(Ator e) {
-        em.persist(e);
+        em.merge(e);
     }
 
     @Override

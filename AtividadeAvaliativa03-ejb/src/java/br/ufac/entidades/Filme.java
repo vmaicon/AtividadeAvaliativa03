@@ -28,10 +28,10 @@ public class Filme implements Serializable {
     
     private String titulo, genero, duracao;
     
-    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "filmes")
+    @ManyToMany(mappedBy = "filmes")
     private List<Ator> atores;
     
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     private Diretor diretor;
 
     public Diretor getDiretor() {
@@ -104,7 +104,7 @@ public class Filme implements Serializable {
 
     @Override
     public String toString() {
-        return "br.ufac.entidades.Filme[ id=" + id + " ]";
+        return titulo;
     }
     
 }

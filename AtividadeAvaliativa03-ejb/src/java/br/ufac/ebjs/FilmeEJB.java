@@ -21,7 +21,7 @@ import javax.persistence.criteria.Root;
 public class FilmeEJB extends DAO<Filme>{
 
     public void persist(Filme f) {
-        em.persist(f);
+        em.merge(f);
     }
     
     public List<Filme> findAll(){

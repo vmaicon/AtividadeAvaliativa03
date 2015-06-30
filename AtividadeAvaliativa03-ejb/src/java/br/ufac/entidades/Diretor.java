@@ -12,6 +12,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 
 /**
@@ -26,7 +27,8 @@ public class Diretor implements Serializable {
     private Long id;
     private String nome, sobrenome;
     
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "diretor")
+    @OneToMany(cascade = CascadeType.ALL)
+    @JoinColumn(name = "DIRETOR_ID", nullable = true)
     private List<Filme> filmes;
 
     public List<Filme> getFilmes() {

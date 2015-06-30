@@ -7,6 +7,7 @@ package br.ufac.entidades;
 
 import java.io.Serializable;
 import java.util.List;
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,9 +27,9 @@ public class Ator implements Serializable {
     
     private String nome, sobrenome;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.ALL)
     private List<Filme> filmes;
-    
+
     public List<Filme> getFilmes() {
         return filmes;
     }
