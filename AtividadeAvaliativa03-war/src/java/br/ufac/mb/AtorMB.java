@@ -26,6 +26,7 @@ public class AtorMB {
     private Filme filme;
     private List<Filme> filmes;
     private List<Ator> atores;
+    private List<String> filmesString;
 
     /**
      * Creates a new instance of AtorMB
@@ -33,6 +34,9 @@ public class AtorMB {
     public AtorMB() {
         ator = new Ator();
         filme = new Filme();
+        if (ator.getFilmes() == null) {
+            ator.setFilmes(new ArrayList<Filme>());
+        }
     }
 
     public String incluir() {
@@ -40,16 +44,6 @@ public class AtorMB {
         ator = new Ator();
 
         return null;
-    }
-
-    public void addFilmes() {
-        if (ator.getFilmes() == null) {
-            ator.setFilmes(new ArrayList<Filme>());
-        }
-        
-//        ator.getFilmes().addAll();
-
-
     }
 
     public Ator getAtor() {
@@ -80,16 +74,26 @@ public class AtorMB {
     }
 
     public List<Filme> getFilmes() {
-        if(filmes == null)filmes = filmeEJB.findAll();
-        System.out.println("getFILMES: "+filmes);
+        if (filmes == null) {
+            filmes = filmeEJB.findAll();
+        }
         return filmes;
     }
 
-    public void setFilmes(List<Filme> filmes) {
-        System.out.println("setFILMES: "+filmes);
-//        this.filmes = filmes;
-        for (Filme f : filmes) {
-            ator.getFilmes().add(f);
+    public List<String> getFilmesString() {
+        return filmesString;
+    }
+
+    public void setFilmesString(List<String> filmesString) {
+        this.filmesString = filmesString;
+    }
+    
+    public void adicionaFilmes(){
+        if(filmesString == null)filmesString = new ArrayList<String>();
+        for (String f : filmesString) {
+            filme = new Filme();
+            filme = filmeEJB.findByTitle(f);
+            ator.getFilmes().add(filme);
         }
     }
 }

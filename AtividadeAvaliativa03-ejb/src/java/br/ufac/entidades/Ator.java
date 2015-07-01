@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.ufac.entidades;
 
 import java.io.Serializable;
@@ -29,6 +24,9 @@ public class Ator implements Serializable {
 
     @ManyToMany(cascade = CascadeType.ALL)
     private List<Filme> filmes;
+
+    public Ator() {
+    }
 
     public List<Filme> getFilmes() {
         return filmes;
@@ -85,7 +83,7 @@ public class Ator implements Serializable {
 
     @Override
     public String toString() {
-        return "br.ufac.entidades.Ator[ id=" + id + " ]";
+        return nome+" "+sobrenome;
     }
     
 }

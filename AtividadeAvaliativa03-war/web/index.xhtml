@@ -1,67 +1,20 @@
 <?xml version='1.0' encoding='UTF-8' ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://xmlns.jcp.org/jsf/html"
-
-      xmlns:f="http://xmlns.jcp.org/jsf/core">
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
     <h:head>
-        <title>Diretor</title>
+        <title>Facelet Title</title>
     </h:head>
     <h:body>
-        <h:outputText value="Incluir Diretor"/>
-
-        <h:form>
-            <h:panelGrid columns="2">
-                Nome: <h:inputText value="#{diretorMB.diretor.nome}"/>
-                Sobrenome: <h:inputText value="#{diretorMB.diretor.sobrenome}"/>
-            </h:panelGrid>
-
-            <h:outputText value="Filmes do Diretor"/>
-            <h:panelGrid columns="2">
-                Titulo <h:inputText value="#{diretorMB.filme.titulo}"/>
-                Gênero: <h:inputText value="#{diretorMB.filme.genero}"/>
-                Duração: <h:inputText value="#{diretorMB.filme.duracao}"/>
-                <h:commandButton value="Adicionar Filme" action="#{diretorMB.addFilmes()}"/>
-            </h:panelGrid>
-
-            <h:dataTable value="#{diretorMB.diretor.filmes}" var="filme">
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputLabel value="Filme" />
-                    </f:facet>
-                    <h:outputText value="#{filme.titulo}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputLabel value="Gênero" />
-                    </f:facet>
-                    <h:outputText value="#{filme.genero}"/>
-                </h:column>
-                <h:column>
-                    <f:facet name="header">
-                        <h:outputLabel value="Duração" />
-                    </f:facet>
-                    <h:outputText value="#{filme.duracao}"/>
-                </h:column>
-            </h:dataTable>
-
-            <h:commandButton value="Incluir"  action="#{diretorMB.incluir()}"/>
-        </h:form>
-
-        <h:dataTable value="#{diretorMB.diretores}" var="d">
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Nome"/>
-                </f:facet>
-                <h:outputText value="#{d.nome}"/>
-            </h:column>
-            <h:column>
-                <f:facet name="header">
-                    <h:outputText value="Sobrenome"/>
-                </f:facet>
-                <h:outputText value="#{d.sobrenome}"/>
-            </h:column>
-        </h:dataTable>
+        Cadastro de Filmes
+        <ul>
+            <li>
+                <a href="faces/diretor_filme.xhtml" >Adicionar filmes e Diretores</a> 
+            </li>
+            <li>
+                <a href="faces/diretor_filme.xhtml" >Adicionar Atores</a> 
+            </li>
+        </ul>
     </h:body>
 </html>
 

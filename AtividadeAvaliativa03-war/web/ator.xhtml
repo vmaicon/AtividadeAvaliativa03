@@ -11,12 +11,14 @@
             <h:panelGrid columns="2">
                 <h:outputLabel value="Nome"/>
                 <h:inputText value="#{atorMB.ator.nome}"/>
+                <h:outputLabel value="Sobrenome"/>
+                <h:inputText value="#{atorMB.ator.sobrenome}"/>
                 <h:outputLabel value="Filme"/>
                 <h:panelGroup>
-                    <h:selectManyListbox value="#{atorMB.ator.filmes}" >
+                    <h:selectManyListbox value="#{atorMB.filmesString}" >
                         <f:selectItems value="#{atorMB.filmes}"/>
                     </h:selectManyListbox>
-                    <h:commandButton value="Adicionar Filmes" action="#{atorMB.setFilmes(atorMB.ator.filmes)}"/>
+                    <h:commandButton value="Adicionar Filmes" action="#{atorMB.adicionaFilmes()}"/>
                 </h:panelGroup>
             </h:panelGrid>
             
@@ -25,7 +27,19 @@
                     <f:facet name="header">
                         <h:outputLabel value="Filme" />
                     </f:facet>
-                    <h:outputText value="#{atorMB.ator.filmes}"/>
+                    <h:outputText value="#{filme.titulo}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Genero" />
+                    </f:facet>
+                    <h:outputText value="#{filme.genero}"/>
+                </h:column>
+                <h:column>
+                    <f:facet name="header">
+                        <h:outputLabel value="Duração" />
+                    </f:facet>
+                    <h:outputText value="#{filme.duracao}"/>
                 </h:column>
             </h:dataTable>
             <h:commandButton value="Adicionar" action="#{atorMB.incluir()}"/>

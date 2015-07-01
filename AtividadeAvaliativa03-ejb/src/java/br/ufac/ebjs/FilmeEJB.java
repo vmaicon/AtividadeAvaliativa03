@@ -33,4 +33,11 @@ public class FilmeEJB extends DAO<Filme>{
         
         return tq.getResultList();
     }
+    
+    public Filme findByTitle(String title){
+        TypedQuery<Filme> f = (TypedQuery<Filme>) em.createQuery("SELECT f FROM Filme f WHERE f.titulo=?1");
+        f.setParameter(1, title);
+        System.out.println("FILME PESQUISADO: "+f.toString());
+        return f.getSingleResult();
+    }
 }

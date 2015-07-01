@@ -40,4 +40,8 @@ public class DiretorEJB extends DAO<Diretor> {
         
         return tq.getResultList();
     }
+
+    public Diretor findById(Long id) {
+        return em.find(Diretor.class, id);
+    }
 }

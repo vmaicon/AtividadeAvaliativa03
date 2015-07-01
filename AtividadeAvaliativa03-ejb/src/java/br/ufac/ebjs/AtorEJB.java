@@ -33,4 +33,8 @@ public class AtorEJB extends DAO<Ator>{
         
         return tp.getResultList();
     }
+    
+    public Ator findById(Long id){
+        return em.find(Ator.class, id);
+    }
 }
