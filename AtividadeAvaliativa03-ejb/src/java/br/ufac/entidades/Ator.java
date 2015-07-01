@@ -22,7 +22,7 @@ public class Ator implements Serializable {
     
     private String nome, sobrenome;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany
     private List<Filme> filmes;
 
     public Ator() {

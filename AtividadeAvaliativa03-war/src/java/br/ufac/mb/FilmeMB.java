@@ -59,6 +59,7 @@ public class FilmeMB {
             ator = new Ator();
             ator = atorEJB.findById(Long.valueOf(a));
             filme.getAtores().add(ator);
+            ator.getFilmes().add(filme);
             System.out.println("atores de filmes: "+filme.getAtores());
         }
     }
