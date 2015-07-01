@@ -33,7 +33,7 @@ public class DiretorMB {
 
     public void addFilmes() {
         if (diretor.getFilmes() == null) {
-            diretor.setFilmes(new ArrayList<Filme>());
+            diretor.setFilmes(new ArrayList<>());
         }
 
         diretor.getFilmes().add(filme);

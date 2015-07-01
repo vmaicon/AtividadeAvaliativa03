@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package br.ufac.mb;
 
 import br.ufac.ebjs.AtorEJB;
@@ -60,7 +55,6 @@ public class FilmeMB {
             ator = atorEJB.findById(Long.valueOf(a));
             filme.getAtores().add(ator);
             ator.getFilmes().add(filme);
-            System.out.println("atores de filmes: "+filme.getAtores());
         }
     }
     

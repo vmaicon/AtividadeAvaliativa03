@@ -35,7 +35,7 @@ public class AtorMB {
         ator = new Ator();
         filme = new Filme();
         if (ator.getFilmes() == null) {
-            ator.setFilmes(new ArrayList<Filme>());
+            ator.setFilmes(new ArrayList<>());
         }
     }
 
@@ -73,6 +73,9 @@ public class AtorMB {
         this.filme = filme;
     }
 
+    /*
+    Retorna uma lista com todos os filmes do banco
+    */
     public List<Filme> getFilmes() {
         if (filmes == null) {
             filmes = filmeEJB.findAll();
@@ -80,6 +83,10 @@ public class AtorMB {
         return filmes;
     }
 
+    /*
+    usado para receber os filmes selecionados na pagina ator.xhtml
+    e fazer uso no método adicionaFilmes()
+    */
     public List<String> getFilmesString() {
         return filmesString;
     }
@@ -89,7 +96,7 @@ public class AtorMB {
     }
     
     public void adicionaFilmes(){
-        if(filmesString == null) setFilmesString(new ArrayList<String>());
+        if(filmesString == null) setFilmesString(new ArrayList<>());
         for (String f : filmesString) {
             filme = new Filme();
             filme = filmeEJB.findByTitle(f);
