@@ -59,11 +59,12 @@ public class FilmeMB {
             ator = new Ator();
             ator = atorEJB.findById(Long.valueOf(a));
             filme.getAtores().add(ator);
+            System.out.println("atores de filmes: "+filme.getAtores());
         }
     }
     
     public String incluir(){
-        filme.getDiretor().setId(diretor.getId());
+        filme.setDiretor(diretorEJB.findById(diretor.getId()));
         filmeEJB.persist(filme);
         filme = new Filme();
         
@@ -109,10 +110,8 @@ public class FilmeMB {
     public void setAtoresString(List<String> atoresString) {
         this.atoresString = atoresString;
     }
-
     
 //    Retorna todos os diretores
-    
     public List<Diretor> getDiretores() {
         return diretores = diretorEJB.findAll();
     }
@@ -120,6 +119,4 @@ public class FilmeMB {
     public void setDiretores(List<Diretor> diretores) {
         this.diretores = diretores;
     }
-    
-    
 }

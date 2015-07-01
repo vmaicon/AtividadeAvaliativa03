@@ -89,7 +89,7 @@ public class AtorMB {
     }
     
     public void adicionaFilmes(){
-        if(filmesString == null)filmesString = new ArrayList<String>();
+        if(filmesString == null) setFilmesString(new ArrayList<String>());
         for (String f : filmesString) {
             filme = new Filme();
             filme = filmeEJB.findByTitle(f);

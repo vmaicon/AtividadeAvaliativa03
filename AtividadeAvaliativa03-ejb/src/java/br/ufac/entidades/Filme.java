@@ -28,7 +28,7 @@ public class Filme implements Serializable {
     
     private String titulo, genero, duracao;
     
-    @ManyToMany(mappedBy = "filmes")
+    @ManyToMany(cascade = CascadeType.ALL, mappedBy = "filmes")
     private List<Ator> atores;
     
     @ManyToOne(cascade = CascadeType.ALL)
